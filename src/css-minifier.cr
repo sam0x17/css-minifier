@@ -15,6 +15,10 @@ module CssMinifier
     source = source.gsub("'", "\\'")
     @@ctx.eval!("var output = new CleanCSS({}).minify(\'#{source}\');")
     @@ctx.eval!("output.styles")
-    output = @@ctx.get_string(-1)
+    output = @@ctx.get_string(-1).not_nil!
+    @@ctx.eval!("JSON.stringify(output.errors)")
+    errors = @@ctx.get_string(-1).not_nil!
+    raise errors if errors != "[]"
+    output
   end
 end
