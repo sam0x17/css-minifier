@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Css::Minifier do
+describe CssMinifier do
   # TODO: Write tests
 
   it "works" do

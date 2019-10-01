@@ -1,6 +1,8 @@
-# TODO: Write documentation for `Css::Minifier`
-module Css::Minifier
-  VERSION = "0.1.0"
+require "duktape"
+require "./clean-css"
 
-  # TODO: Put your code here
+module CssMinifier
+
 end
+
+puts CLEAN_CSS_JS
